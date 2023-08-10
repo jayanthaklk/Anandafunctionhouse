@@ -1,0 +1,308 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@900&family=Updock&display=swap');
+
+/* Reset */
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Whole Doc */
+html,
+body {
+    font-style: 1rem;
+    background-color: white;
+    color: #fff;
+    font-family: 'roboto', sans-serif;
+}
+
+header {
+    width: 100%;
+}
+
+/* Nav Bar */
+nav {
+    width: 100%;
+    padding: 10px 20px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-around;
+    
+    align-items: center;
+    background-color: #3c095e;
+}
+
+/* Logo */
+.logo {
+    flex-basis: 20%;
+    font-style: 2rem;
+    display: flex;
+    /* logo align to start point */
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.logo span {
+    background: white;
+    color: #9838d8;
+    padding: 5px 1px;
+}
+
+/* menu Bar */
+.menu {
+    flex-basis: 50%;
+    list-style: none;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 3;
+    transition: all 0.4s ease-in;
+}
+
+/* all li of inside menu */
+.menu li {
+    position: relative;
+}
+
+.menu li a {
+    text-decoration: none;
+    color: #fff;
+    padding: 23px 30px;
+    transition: all 0.3s ease-in;
+}
+
+/* all li under menu */
+.menu li a:hover {
+    color: #a7a0a0;
+}
+
+.menu .drop>a>i {
+    position: absolute;
+    right: 10px;
+}
+
+.menu .drop:hover>a>i {
+    transform: rotate(-90deg);
+}
+
+/* Sub Menu */
+/* Level-1 */
+.submenu1 {
+    position: absolute;
+    list-style: none;
+    font-size: 0.9rem;
+    background: #3c095e;
+    width: 140px;
+    left: 0;
+    top: 100%;
+    margin-top: 22px;
+    display: none;
+}
+
+.submenu1 li a {
+    display: block;
+    padding: 8px 15px;
+}
+
+.submenu1 li a:hover {
+    background: #fff;
+    color: #9838d8;
+}
+
+/* Level-2 & 3 */
+.submenu2-a,
+.submenu2-b,
+.submenu3-a {
+    position: absolute;
+    list-style: none;
+    background: #530d81;
+    width: 120px;
+    left: 100%;
+    top: 0;
+    display: none;
+}
+
+/* Display sub menu */
+.menu>li:hover>.submenu1,
+.submenu1>li:hover>.submenu2-a,
+.submenu1>li:hover>.submenu2-b,
+.submenu2-b>li:hover>.submenu3-a {
+    display: block;
+}
+
+/* Hamburger */
+nav input[type="checkbox"] {
+    display: none;
+}
+
+nav>label {
+    position: absolute;
+    top: 40px;
+    right: 5%;
+    cursor: pointer;
+    z-index: 5;
+    font-size: 1.5rem;
+    display: none;
+}
+
+/* Hero Text */
+.text {
+    position: absolute;
+    width: 50%;
+    top: 50%;
+    left: 7%;
+    transform: translateY(-50%);
+    font-size: 5.5rem;
+    font-weight: 900;
+}
+
+/* Responsive */
+@media(max-width:1230px) {
+
+    /* Nav bar */
+    .menu {
+        flex-basis: 60%;
+    }
+
+    /* Hero text */
+    .text {
+        font-size: 4rem;
+        padding: 30px;
+    }
+}
+
+@media(max-width:1048px) {
+
+    /* Nav bar */
+    .menu {
+        flex-basis: 70%;
+    }
+
+    /* Hero text */
+    .text {
+        font-size: 4rem;
+        padding: 20px;
+    }
+}
+
+/*========================= max-size 900px ==================*/
+@media(max-width: 900px) {
+
+    /* Nav bar */
+    nav {
+        justify-content: space-between;
+        flex-direction: column;
+    }
+
+    /* Logo */
+    .logo {
+        margin: 20px 0;
+    }
+
+    /* Menu bar */
+    .menu {
+        position: absolute;
+        width: 100vw;
+        padding-top: 40px;
+        flex-direction: column;
+        overflow-x: hidden;
+        top: 108px;
+        left: -100%;
+        background:lightcyan;
+        transition: all 0.4s ease-in;
+    }
+
+    .menu>li {
+        margin-bottom: 50px;
+    }
+
+    .menu>li>a {
+        padding: 20px 50px;
+    }
+
+    .menu>li>a:hover {
+        background: #fff;
+        color: #9838d8;
+    }
+
+    /* sub menu */
+    .submenu1,
+    .submenu2-a,
+    .submenu2-b,
+    .submenu3-a {
+        background: none;
+    }
+
+    .menu>li:hover>.submenu1,
+    .submenu1>li:hover>.submenu2-a,
+    .submenu1>li:hover>.submenu2-b,
+    .submenu2-b>li:hover>.submenu3-a {
+        /* display: block; */
+        position: relative;
+        left: 27%;
+        width: 120px;
+    }
+
+    /* Hamburger */
+    nav>label:nth-child(3) {
+        display: block;
+    }
+
+    /* Display menu */
+    #menu:checked~.menu {
+        left: 0;
+    }
+
+    #menu:checked~label:nth-child(4) {
+        display: block;
+    }
+
+    #menu:checked~label:nth-child(3) {
+        display: none;
+    }
+
+    /* Hero text */
+    .text {
+        font-size: 3rem;
+        width: 40%;
+    }
+
+}
+/* ===========Navbar end============ */
+
+/* ===============Headings======== */
+.heading-prod h2 {
+    font-size: 3rem;
+    font-family: 'roboto', sans-serif;
+    color: #3c095e;
+    text-align: center;
+    margin:10px;
+    margin-bottom: 0;
+    margin-top: 20px;
+    position: relative;
+    padding: auto;
+    }
+
+.heading-work h2{
+    font-size: 3rem;
+        font-family: 'roboto', sans-serif;
+        color: #3c095e;
+        text-align: center;
+        margin:10px;
+        margin-bottom: 0;
+        margin-top: 20px;
+        position: relative;
+        padding: auto;
+        }
+
+    .heading-service h2{
+        font-size: 3rem;
+        font-family: 'roboto', sans-serif;
+        color: #3c095e;
+        text-align: center;
+        margin:10px;
+        margin-bottom: 0;
+        margin-top: 20px;
+        position: relative;
+        padding: auto;
+        }
